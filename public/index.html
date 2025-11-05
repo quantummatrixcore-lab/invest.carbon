@@ -2125,6 +2125,10 @@
                 }
             });
 
+            // Re-render charts with new language
+            if (typeof initRevenueChart === 'function') initRevenueChart();
+            if (typeof initFundsChart === 'function') initFundsChart();
+
             // Update calculator
             updateCalculator();
         }
@@ -2273,6 +2277,8 @@
         }
 
         // Revenue Streams Chart
+        let revenueChart;
+
         function initRevenueChart() {
             const ctx = document.getElementById('revenueChart').getContext('2d');
 
@@ -2280,7 +2286,11 @@
                 ? ['SaaS Abonelikleri', 'Platform Komisyonları', 'API & Entegrasyon', 'Doğrulama & Sertifikasyon', 'IoT & Teknoloji', 'Eğitim & Danışmanlık']
                 : ['SaaS Subscriptions', 'Platform Commissions', 'API & Integration', 'Verification & Certification', 'IoT & Technology', 'Training & Consulting'];
 
-            new Chart(ctx, {
+            if (revenueChart) {
+                revenueChart.destroy();
+            }
+
+            revenueChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     labels: labels,
@@ -2320,6 +2330,8 @@
         }
 
         // Use of Funds Chart
+        let fundsChart;
+
         function initFundsChart() {
             const ctx = document.getElementById('fundsChart').getContext('2d');
 
@@ -2327,7 +2339,11 @@
                 ? ['Ürün & Teknoloji', 'Satış & Pazara Giriş', 'Operasyon', 'Yasal & Uyumluluk']
                 : ['Product & Technology', 'Sales & GTM', 'Operations', 'Legal & Compliance'];
 
-            new Chart(ctx, {
+            if (fundsChart) {
+                fundsChart.destroy();
+            }
+
+            fundsChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     labels: labels,
