@@ -1335,8 +1335,8 @@
 
             <div class="nav-right">
                 <div class="lang-toggle">
-                    <button class="lang-btn active" data-lang="tr">🇹🇷 TR</button>
-                    <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+                    <button class="lang-btn" data-lang="tr">🇹🇷 TR</button>
+                    <button class="lang-btn active" data-lang="en">🇬🇧 EN</button>
                 </div>
                 <a href="#" class="btn btn-primary" data-tr="Data Room Erişim" data-en="Data Room Access">Data Room Access</a>
             </div>
@@ -2218,6 +2218,9 @@
 
         function switchLanguage(lang) {
             currentLang = lang;
+
+            // Update HTML lang attribute for accessibility
+            document.documentElement.setAttribute('lang', lang);
 
             // Update all elements with data-tr and data-en attributes
             document.querySelectorAll('[data-tr][data-en]').forEach(element => {
