@@ -36,8 +36,8 @@ Then visit: http://localhost:8000
 
 ```
 invest.carbon/
-├── index.html          # Complete single-file landing page
-├── vercel.json         # Vercel configuration
+├── index.html          # Complete single-file landing page (served from root)
+├── vercel.json         # Vercel configuration (simplified)
 ├── package.json        # Project metadata
 └── README.md          # This file
 ```

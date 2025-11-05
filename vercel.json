@@ -1,5 +1,4 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
+  "buildCommand": "cp index.html public/index.html",
+  "outputDirectory": "public"
 }
