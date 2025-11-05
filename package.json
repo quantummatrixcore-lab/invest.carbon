@@ -1,0 +1,18 @@
+{
+  "name": "carbonecomarket-investor",
+  "version": "1.0.0",
+  "description": "CarbonEcoMarket Investor Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "build": "echo 'No build needed - static HTML'"
+  },
+  "keywords": [
+    "carbon",
+    "investment",
+    "cbam",
+    "blockchain"
+  ],
+  "author": "CarbonEcoMarket",
+  "license": "PRIVATE"
+}
