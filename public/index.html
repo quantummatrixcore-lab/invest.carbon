@@ -1373,7 +1373,7 @@
                             <div class="metric-label" data-tr="50K ton/yıl" data-en="50K ton/year">50K ton/year</div>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-value">$9.1M</div>
+                            <div class="metric-value">$10M</div>
                             <div class="metric-label" data-tr="Post-Money" data-en="Post-Money">Post-Money</div>
                         </div>
                         <div class="metric-card">
@@ -1889,7 +1889,7 @@
             <div class="investment-rounds">
                 <h4 data-tr="💵 Yatırım Turları / Investment Rounds:" data-en="💵 Investment Rounds:">💵 Investment Rounds:</h4>
                 <ul>
-                    <li><strong>Seed (2025):</strong> $1.5-2M @ $9.1M post-money</li>
+                    <li><strong>Seed (2025):</strong> $1.5-2M @ $10M post-money</li>
                     <li><strong>Series A (2027):</strong> $20M @ $80-120M post-money</li>
                     <li><strong>Series B (2028):</strong> $50M @ $200-400M post-money</li>
                     <li><strong>Series C (2029):</strong> $100M @ $500M-$1B post-money 🦄</li>
@@ -2510,7 +2510,7 @@
             const years = parseInt(document.getElementById('yearsSlider').value);
             const scenario = document.querySelector('input[name="scenario"]:checked').value;
 
-            const seedValuation = 9.1; // Post-money in millions
+            const seedValuation = 10; // Post-money in millions
             const exitValuation = valuations[scenario][years - 1];
             const multiple = exitValuation / seedValuation;
             const totalReturn = (investment / 1000000) * multiple;
@@ -2541,7 +2541,7 @@
 
         function updateROIChart(investment, years, scenario) {
             const ctx = document.getElementById('roiChart').getContext('2d');
-            const seedValuation = 9.1;
+            const seedValuation = 10;
 
             const chartLabels = ['2025'];
             const chartData = [investment / 1000000];
