@@ -599,53 +599,70 @@
            MARKET OPPORTUNITY - TAM/SAM/SOM
            ═══════════════════════════════════════════ */
         .market-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
             margin: 50px 0;
-            position: relative;
-            min-height: 500px;
         }
 
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+        .market-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
             text-align: center;
-            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid;
         }
 
-        .circle-tam {
-            width: 500px;
-            height: 500px;
-            background: rgba(15, 107, 99, 0.1);
-            border: 3px solid var(--primary-teal);
+        .market-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
 
-        .circle-sam {
-            width: 350px;
-            height: 350px;
-            background: rgba(41, 128, 185, 0.15);
-            border: 3px solid var(--tech-blue);
+        .market-card-tam {
+            border-top-color: var(--primary-teal);
         }
 
-        .circle-som {
-            width: 200px;
-            height: 200px;
-            background: rgba(166, 226, 46, 0.2);
-            border: 3px solid var(--accent-lime);
+        .market-card-sam {
+            border-top-color: var(--tech-blue);
         }
 
-        .circle h3 {
-            font-size: 24px;
+        .market-card-som {
+            border-top-color: var(--accent-lime);
+        }
+
+        .market-card .market-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--slate-medium);
             margin-bottom: 10px;
         }
 
-        .circle p {
-            font-size: 14px;
+        .market-card h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .market-card-tam h3 {
+            color: var(--primary-teal);
+        }
+
+        .market-card-sam h3 {
+            color: var(--tech-blue);
+        }
+
+        .market-card-som h3 {
+            color: var(--accent-lime);
+        }
+
+        .market-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--slate-dark);
             margin: 0;
         }
 
@@ -1047,19 +1064,9 @@
             h2 { font-size: 30px; }
             h3 { font-size: 24px; }
 
-            .circle-tam {
-                width: 400px;
-                height: 400px;
-            }
-
-            .circle-sam {
-                width: 280px;
-                height: 280px;
-            }
-
-            .circle-som {
-                width: 160px;
-                height: 160px;
+            .market-visual {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
 
@@ -1120,29 +1127,6 @@
 
             th, td {
                 padding: 10px;
-            }
-
-            .circle-tam {
-                width: 300px;
-                height: 300px;
-            }
-
-            .circle-sam {
-                width: 210px;
-                height: 210px;
-            }
-
-            .circle-som {
-                width: 120px;
-                height: 120px;
-            }
-
-            .circle h3 {
-                font-size: 16px;
-            }
-
-            .circle p {
-                font-size: 11px;
             }
 
             .output-grid {
@@ -1585,22 +1569,25 @@
             </h2>
 
             <div class="market-visual">
-                <div class="circle circle-tam">
-                    <h3 data-tr="TAM: $70B+" data-en="TAM: $70B+">TAM: $70B+</h3>
+                <div class="market-card market-card-tam">
+                    <div class="market-label" data-tr="TAM - Toplam Adreslenebilir Pazar" data-en="TAM - Total Addressable Market">TAM - Total Addressable Market</div>
+                    <h3 data-tr="$70B+" data-en="$70B+">$70B+</h3>
                     <p data-tr="Global Karbon Piyasası (2025)<br>→ $300B+ (2030)" data-en="Global Carbon Market (2025)<br>→ $300B+ (2030)">
                         Global Carbon Market (2025)<br>→ $300B+ (2030)
                     </p>
                 </div>
-                <div class="circle circle-sam">
-                    <h3 data-tr="SAM: $5B" data-en="SAM: $5B">SAM: $5B</h3>
-                    <p data-tr="MENA + Türkiye<br>Bölgesi" data-en="MENA + Turkey<br>Region">
-                        MENA + Turkey<br>Region
+                <div class="market-card market-card-sam">
+                    <div class="market-label" data-tr="SAM - Hizmet Verilebilir Pazar" data-en="SAM - Serviceable Available Market">SAM - Serviceable Available Market</div>
+                    <h3 data-tr="$5B" data-en="$5B">$5B</h3>
+                    <p data-tr="MENA + Türkiye Bölgesi<br>CBAM uyum ihtiyacı" data-en="MENA + Turkey Region<br>CBAM compliance needs">
+                        MENA + Turkey Region<br>CBAM compliance needs
                     </p>
                 </div>
-                <div class="circle circle-som">
-                    <h3 data-tr="SOM: $500M" data-en="SOM: $500M">SOM: $500M</h3>
-                    <p data-tr="3. Yıl Hedef<br>(2028)" data-en="Year 3 Target<br>(2028)">
-                        Year 3 Target<br>(2028)
+                <div class="market-card market-card-som">
+                    <div class="market-label" data-tr="SOM - Erişilebilir Pazar" data-en="SOM - Serviceable Obtainable Market">SOM - Serviceable Obtainable Market</div>
+                    <h3 data-tr="$500M" data-en="$500M">$500M</h3>
+                    <p data-tr="3. Yıl Hedef (2028)<br>İlk mover avantajı" data-en="Year 3 Target (2028)<br>First-mover advantage">
+                        Year 3 Target (2028)<br>First-mover advantage
                     </p>
                 </div>
             </div>
